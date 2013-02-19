@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% block head %}
+  <script src="/socket/" type="text/javascript"></script>
+  <link rel="stylesheet" href="{{ MEDIA_URL }}css/common.css" type="text/css" />
+  <script src="{{ MEDIA_URL }}js/jquery.min.js" type="text/javascript"></script>
+  <script src="{{ MEDIA_URL }}js/socket.io.js" type="text/javascript"></script>
+  <script src="/statics/js/socket.js" type="text/javascript"></script>
+  <script src="{{ MEDIA_URL }}js/notify.js" type="text/javascript"></script>
+
+{% endblock %}
+{% block extrahead %}
+{% endblock extrahead %}
+
+</head>
+<body>
+<notificationarea tips="{% url notify.views.tips %}"><notify></notify></notificationarea>
+<img src="/stat/?url={{request.path}}">
+{% block body %}
+
+<header>
+{% block header %}
+
+<tinybar>
+</tinybar>
+
+<navbar>
+<nav>
+<ul class="vertical">
+  <li><a href="/blog/">Blog</a></li>
+  <li><a href="/about/me/">About Me</a></li>
+<!--  <li><a href="/projects/">Projects</a></li>
+  <li><a href="/memories/">Memories</a></li>-->
+</ul>
+</nav>
+</navbar>
+<!--
+<searchbar>
+  <form action="/search/" method="GET">
+    <input type="text" name="search" id="search"/>
+    <input type="submit" value=""/>
+  </form>
+</searchbar>
+-->
+<sitetitle>
+  <a href="/"><h1>lxsameer.com</h1></a>
+  <span>Impossible is Impossible</span>
+  <beta>BETA</beta>
+</sitetitle>
+<planet></planet>
+<centercloud>
+</centercloud>
+<clouds>
+
+</clouds>
+{% endblock header %}
+</header>
+<content>
+{% block content %}
+{% endblock content %}
+</content>
+
+{% block footer %}
+<copyright>
+  <info>Version: {{ VERSION }} | Python: {{ PYVERSION }} | Django: {{ DJVERSION }} | Vanda: {{ VANDAVERSION }}</info>
+  <p><a id="copyright" href="/page/copyright/" title="Copyright notes">Copyright</a> © 2008-2012 Sameer Rahmani.
+  Powered by <a href="http://www.vandaproject.com">Vanda Platform</a>.</p>
+</copyright>
+{% endblock footer %}
+
+{% endblock body %}
+</body>
+</html>

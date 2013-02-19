@@ -1,0 +1,61 @@
+body {
+    Background: #eeeeec;
+    font-family: Cantarell,'Droid Sans',Ubuntu,'DejaVu Sans',Arial,sans-serif;
+}
+aside {
+    min-height: 400px;
+}
+#content {
+    min-height: 90%;
+    
+}
+.box {
+    border-radius: 5px;
+    Background: #fff;
+    padding: 20px;
+    margin: 10px;
+    float: left;
+}
+
+.cleft {
+    float: left;
+    clear: left;
+}
+.cright {
+    margin-right: 20px;
+    float: right;
+    clear: right;
+}
+.box h1 {
+    font-size: 16px;
+}
+.w12 {
+    width: 500px;
+}
+
+.w1 {
+    width: 1000px;
+}
+
+#copyright {
+    width: 100%;
+    font-size: 12px;
+    height: 15px;
+    border-top: 1px solid #1a1a1a;
+    margin-top: 40px;
+    position: relative;
+    clear: right;
+}
+#copyrightnote {
+    margin-left: 5px;
+}
+
+#info {
+    float: right;
+    margin-right: 5px;
+}
+
+header {
+
+    height: 90px;
+}

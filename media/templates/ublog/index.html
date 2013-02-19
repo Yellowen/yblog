@@ -1,0 +1,198 @@
+{% extends 'ublog/base.html' %}
+{% load i18n %}
+{% load comments categories_list %}
+{% load blog %}
+
+{% block extrahead %}
+  <title>Blog | lxsameer.com</title>
+  <link rel="stylesheet" href="{{ MEDIA_URL }}css/blog/style.css" type="text/css" />
+  <link rel="stylesheet" href="{{ MEDIA_URL }}css/blog/tab.css" type="text/css" />
+
+  <link rel="stylesheet" href="{{ MEDIA_URL }}css/blog/night.css" type="text/css" />
+  <link rel="stylesheet" href="{{ MEDIA_URL }}css/blog/microform.css" type="text/css" />
+  <script src="{{ MEDIA_URL }}js/blog.js" type="text/javascript"></script>
+  <script src="{{ MEDIA_URL }}js/tab.js" type="text/javascript"></script>
+{% endblock extrahead %}
+
+{% block content %}
+
+<div class="posts">
+
+
+<tabbedcontent>
+
+<containers>
+<container id="microblog">
+
+{% microposts 30 %}
+<div id="commentform">
+
+  <form method="post" action="/comments/post/">
+    {% csrf_token %}
+    <div>
+      <input type="hidden" id="id_content_type" value="ultra_blog.micropost" name="content_type">
+    </div>
+    <div>
+      <input type="hidden" id="id_object_pk" value="1" name="object_pk">
+    </div>
+    <div>
+      <input type="hidden" id="id_timestamp" value="1326436116" name="timestamp">
+    </div>
+    <div>
+      <input type="hidden" id="id_security_hash" value="8bcabed475c809d67fcf8e69177d247fa3df2b0d" name="security_hash">
+    </div>
+    <p>{% trans 'Name' %}:</p>
+    <input type="text" maxlength="50" name="name" id="id_name">
+    <p>{% trans "Comment" %}:</p>
+    <textarea name="comment" id="id_comment"></textarea>
+    <div style="display:none;">
+      <input type="text" id="id_honeypot" name="honeypot">
+      <input type="text" name="email" id="id_email" value="nomail@nomail.ccc"/>
+    </div>
+    <span class="wait" style="display: none;">{% trans "Please wait" %}</span>
+    <span class="post">{% trans "Send" %}</span><span class="cancel">X</span>
+  </form>
+</div>
+
+<br><br>
+{% if sectionname %}
+<h1>{{ sectionname }}</h1>
+{% endif %}
+</container>
+
+<container id="blog">
+{% if category_name %}
+<h1>Category: <b>{{ category_name|title }}</b></h1>
+<br><br>
+{% endif %}
+
+{% for post in posts.object_list %}
+<!-- Each post -->
+<article>
+
+<!-- Detail section -->
+<div class="detailstag tinyfont hiddeninfo">
+<ul class="vertical details">
+<li id="user">{{ post.author }}</li>
+<li id="comment"><a href="{% url ultra_blog.views.view_post post.slug %}">{% get_comment_count for post as count %} {{ count }}</a></li>
+</ul>
+</div> <!--details-->
+<!-- Post Title -->
+<h1><a href="{{ post.get_absolute_url }}">{{ post.title|capfirst }}</a></h1>
+
+<!-- Post content -->
+<entry>
+{% autoescape off %}
+  {{ post.get_content }}
+{% endautoescape %}
+</entry>
+
+<!-- Category and tag section -->
+<categories>
+<!-- categories -->
+<ul class="vertical cats hiddeninfo">
+<div id="categories">
+{% for cat in post.get_categories %}
+<li><a href="{{ cat.get_absolute_url }}">{{ cat }}</a></li>
+{% endfor %}
+</div>
+</ul>
+<!-- tags -->
+<ul class="vertical cats hiddeninfo">
+{% if  post.get_tags %}
+<div id="tags">
+{% for tag in post.get_tags %}
+<li><a href="{% url ultra_blog.views.view_tag tag %}">{{ tag }}</a></li>
+{% endfor %}
+</div>
+{% endif %}
+
+</ul>
+</categories>
+
+<!-- Time Section -->
+<time class="tinyfont hiddeninfo"><timestring>{{ post.datetime|date:"H:i d b Y" }}{% if post.is_updated %} | {% trans 'Last update' %}: {{ post.update_datetime|date:"H:i d b Y" }}{% endif %}</timestring></time>
+
+<br>
+</article>
+{% endfor %}
+
+<!-- Pagination section -->
+<pagination>
+    <span class="step-links">
+        {% if posts.has_previous %}
+            <a href="?page={{ posts.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
+        </span>
+
+        {% if posts.has_next %}
+            <a href="?page={{ posts.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</pagination>
+</container>
+</containers>
+
+</tabbedcontent>
+</div> <!-- posts -->
+
+<aside>
+
+<h2>Tabs</h2>
+<menu>
+<ul>
+<tabs>
+<li><item><tab container="blog" class="select">Blog</tab></item></li>
+<li><item><tab container="microblog">Log</tab></item></li>
+</tabs>
+<li>
+</menu>
+
+
+<h2>Blog</h2>
+<menu>
+
+  <ul>
+    {% block rssfeed %}
+    <li><item><a href="{{ rssfeed }}">RSS Feeds</a></item></li>
+    {% endblock %}
+    <li>
+      <item>Categories</item>
+      <section>
+	{% categories %}
+      </section>
+    </li>
+    <li>
+      <item>Post types</item>
+      <section>
+	<ul class="categories">
+	{% for type in types %}
+	<li><a href="{% url ultra_blog.views.view_type type.0 %}">{{ type.1 }}</a></li>
+	{% endfor %}
+	</ul>
+      </section>
+    </li>
+
+    <li>
+      <item>Links</item>
+      <section>
+	<ul class="categories">
+	  <li><a href="http://www.b3hnam.com">B3hnam's Blog</a></li>
+	  <li><a href="http://www.belendax.org">Zahra Khani's Blog</a></li>
+	  <li><a href="http://www.ashpazonline.com/mdarya">My mother's Blog</a></li>
+
+	</ul>
+      </section>
+
+    </li>
+  </ul>
+</menu>
+
+
+
+
+</aside>
+{% endblock content %}

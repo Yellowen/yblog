@@ -1,0 +1,33 @@
+input:focus, select:focus {
+    box-shadow: 0px 0px 3px orange;
+    border: 1px solid orange;
+}
+
+input, select {
+    border-radius: 3px;
+    border: 1px solid #a8a8a8;
+    margin: 10px 2px;
+    font-size: 16px;
+    padding: 3px;
+    color: #3f3f3f;
+}
+select {
+    
+    Background: #eeeeec;
+}
+input[type="submit"]{
+    Background: #729fcf;
+    padding: 5px;
+    color: #fff;
+    border: 0;
+    font-size: 14px;
+    font-weight: 700;
+}
+label {
+    font-weight: 100;
+}
+
+form span {
+    color: #b8b8b8;
+    font-size: 12px;
+}

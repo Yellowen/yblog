@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+{% block head %}
+<title>{% block title %}lxsameer.com{% endblock %}</title>
+
+{% endblock %}
+</head>
+<body>
+{% block body %}
+<section id="wrap">
+{% block content %}
+{% endblock %}
+
+
+{% block footer %}
+<footer>
+<license>
+<p><a id="copyright" href="/page/copyright/" title="Copyright notes">Copyright</a> © 2011 Sameer Rahmani</p>
+</license>
+<vanda>
+</vanda>
+</footer>
+{% endblock %}
+
+</section>
+{% endblock %}
+</body>
+<html>

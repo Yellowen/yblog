@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+{% block head %}
+<title>lxsameer.com</title>
+<link rel="stylesheet" href="{{ MEDIA_URL }}css/index/style.css" type="text/css" />
+<script src="{{ MEDIA_URL }}js/jquery.min.js" type="text/javascript"></script>
+<script src="{{ MEDIA_URL }}js/socket.io.js" type="text/javascript"></script>
+<script src="/socket/" type="text/javascript"></script>
+<script src="{{ MEDIA_URL }}js/cloud.js" type="text/javascript">
+</script>
+{% endblock %}
+</head>
+<body>
+<section id="wrap">
+{% block content %}
+<header>
+
+<p>lxsameer.com<beta>BETA</beta>
+</p>
+<span>Impossible is Impossible</span>
+<nav>
+<ul>
+  <li><a href="/blog/">Blog</a></li>
+  <li><a href="/about/me/">About Me</a></li>
+<!--  <li><a href="/projects/">Projects</a></li>
+  <li><a href="/memories/">Memories</a></li>-->
+</ul>
+</nav>
+</header>
+{% endblock %}
+{% block footer %}
+<footer>
+<license>
+<p><a id="copyright" href="/page/copyright/" title="Copyright notes">Copyright</a> © 2008-2012 Sameer Rahmani</p>
+</license>
+<a href="http://www.vandaproject.com/">
+<vanda>
+</vanda>
+</a>
+</footer>
+{% endblock %}
+
+</section>
+</body>
+<html>
+
+

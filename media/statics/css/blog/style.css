@@ -1,0 +1,454 @@
+/* Global */
+a {
+    color: #323232;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #7a5590;
+    -moz-transition: color 300ms linear 0s;
+    -webkit-transition: color 300ms linear 0s;
+}
+
+.tinyfont{
+    font-size: 12px;
+}
+
+/* header */
+header {
+    position: absolute;
+    top: 0px;
+    height: 490px;
+    width: 100%;
+}
+
+#sitetitle {
+    position: absolute;
+    width: 100%;
+    margin: 0 auto;
+    color: #eeeeec;
+}
+#sitetitle h1{
+    margin-top: 80px;
+    float: left;
+    margin-left: 400px;
+    text-shadow: 0px 4px 2px black;
+    font-size: 100px;
+}
+
+#sitetitle span{
+    float: left;
+    padding-top: 200px;
+    font-size: 12px;
+    margin-left: -100px;
+    font-size: 16px;
+}
+#sitetitle a {
+    color: #eeeeec;
+}
+#sitetitle a:hover {
+    color: #eeeeec;
+}
+beta{
+    position: absolute;
+    padding: 6px;
+    font-size: 14px;
+    border-radius: 3px;
+    Background: #2c8596;
+    margin-left: -65px;
+    margin-top: 125px;
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+.menubar {
+    Background: #d8c98d;
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    top: 20px;
+    z-index: 1;
+}
+
+nav {
+    color: #1f1f1f;
+    font-size: 12px;
+    padding: 6px 0px 6px 0px;
+    Background: #d8c98d;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+nav a{
+    font-size: 12px;
+    padding: 8px;
+    //border-radius: 5px;
+
+}
+nav a:hover{
+    Background: #d2a800;
+    color: #1f1f1f;
+    -moz-transition: Background 300ms linear 0s;
+    -webkit-transition: Background 300ms linear 0s;    
+}
+
+nav ul li {
+    margin: 5px;
+}
+
+searchbar {
+    color: #1f1f1f;
+    font-size: 12px;
+    padding: 5px;
+    Background: #d8c98d;
+    border-radius: 5px;
+    position: absolute;
+    top: 0px;
+    right: 1%;
+}
+
+searchbar #search{
+    border-radius: 5px;
+    height: 20px;
+    border: 1px solid #a8a8a8;
+}
+
+#clouds{
+    position: absolute;
+    width: 100%;
+    height: 90px;
+    top: 400px;
+    background: url('/statics/images/ublog/cloud-bg.png') repeat-x scroll center bottom transparent;
+
+}
+#leftcloud{
+    position: absolute;
+    Background: url('/statics/images/ublog/cn-cloud-home.png') no-repeat scroll 0 0 transparent;
+    width: 100%;
+    overflow: hidden;
+    height: 425px;
+    top: 40px;
+}
+
+#centercloud{
+    Background: url('/statics/images/ublog/cn-cloud.png') no-repeat scroll 0 0 transparent;
+    width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    height: 425px;
+    margin-top: 240px;
+}
+
+/* content */
+content {
+    Background: white;
+    min-height: 100%;
+    padding: 10px 50px 50px 50px;
+    margin-top: 480px;
+}
+
+aside {
+    float: right;
+    border-radius: 5px;
+    width: 25%;
+    left: 70%;
+    top: 520px;
+    min-height: 300px;
+    position: absolute;
+    padding: 15px 0px 0px 15px;
+
+}
+aside menu {
+    margin-top: 40px;
+    border-left: 1px solid #898989;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+aside h2{
+    position: relative;
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    float: left;
+    left: -60px;
+    display: inline;
+    top: 55px;
+    font-size: 38px;
+    color: #d3d7c6;
+    
+}
+aside menu li {
+    list-style: none;
+}
+aside menu ul li:first-child {
+    position: relative;
+    left: -75px;
+}
+aside menu section ul li:first-child {
+        position: relative;
+	left: 0px;
+}
+aside menu item {
+
+    font-size: 32px;
+    font-weight: 900;
+    
+}
+
+aside menu item:hover {
+    padding-left: 30px;
+    text-shadow: 0px 1px 1px gray;
+    -webkit-transition: padding-left 200ms linear 0s;
+    -moz-transition: padding-left 200ms linear 0s;
+    cursor: pointer;
+}
+aside menu item a:hover {
+    padding-left: 15px;
+    color: #323232;
+    text-shadow: 0px 1px 1px gray;
+    -moz-transition: padding-left 300ms ease 0s;
+    -webkit-transition: padding-left 300ms ease 0s;
+}
+
+aside section {
+    padding: 10px 0px 10px 30px;
+}
+aside section .categories {
+    padding-left: 10px;
+    font-size: 18px;
+}
+aside section .categories li:before{
+    content: "\00BB \0020";
+}
+
+article {
+    padding: 25px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+article:hover{
+    background: #efefef;
+    -moz-transition: background 300ms ease 0ms;
+    -webkit-transition: background 300ms ease 0ms;
+}
+
+article a{
+    text-shadow: 0px 1px 1px gray;
+}
+
+article h1 {
+    font-size: 40px;
+    margin-top: 11px;
+}
+article h1 a{
+    text-shadow: none;
+}
+
+article h1 a:hover{
+    color: #323232;
+    padding-left: 30px;
+    -moz-transition: padding-left 300ms ease 0s;
+    -webkit-transition: padding-left 300ms ease 0s;
+}
+
+entry section {
+    text-indent: 20px;
+    padding: 10px 20px 10px 20px;
+}
+
+entry section ul {
+    margin-left: 40px;
+    text-indent: 0;
+}
+
+entry section:first-line {
+    text-transform:capitalize;
+}
+
+.detailstag {
+    float: right;
+    margin-top: -10px;
+}
+
+ul.vertical{
+    text-decoration: none;
+}
+
+ul.vertical li{
+    display: inline;
+}
+
+.details li{
+    padding-left: 25px;
+    vertical-align: middle;
+    margin-right: 25px;
+}
+.cats {
+    display: inline;
+
+}
+
+.cats li {
+    padding-left: 5px;
+    margin-right: 5px;
+
+}
+
+#user {
+    Background: url("/statics/images/user.png") 0 0 no-repeat transparent;
+}
+#comment {
+    Background: url("/statics/images/comment.png") 0 0 no-repeat transparent;
+}
+#tags {
+    Background: url("/statics/images/tag.png") 0 9px no-repeat transparent;
+    padding: 5px;
+    padding-left: 20px;
+    display: inline;
+
+}
+
+#categories {
+    Background: url("/statics/images/category.png") 0 9px no-repeat transparent;
+    padding: 5px;
+    padding-left: 20px;
+    display: inline;
+}
+categories {
+    margin-top: 10px;
+    float: left;
+}
+time {
+    float: right;
+    margin-top: 10px;
+    Background: url("/statics/images/time.png") 0 2px no-repeat transparent;
+    padding: 0px 0px 5px 20px;
+    height: 20px;
+    overflow: hidden;
+}
+
+timestring {
+    display: none;
+    white-space:nowrap;
+}
+
+pagination {
+    display: block;
+    margin-top: 20px;
+}
+
+.codehilitetable {
+    font-family: Courier, 'DejaVu Sans',Arial,sans-serif;
+    Background: none;
+    border-left: 1px solid #acacac;
+    margin:10px;
+    font-size: 12px;
+
+}
+.codeblock{
+    overflow-x: auto;
+    position: relative;
+    width: 100%;
+    
+}
+.linenos {
+    padding: 5px;
+}
+.code{
+    padding-left: 10px;
+
+
+}
+
+
+/* footer */
+footer {
+    width: 100%;
+
+}
+footer .vertical {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+footer .vertical a {
+    color: #00abea;
+    padding: 10px;
+    text-decoration: underline;
+    font-size: 11px;
+}
+.vmenu {
+    list-style: none;
+}
+video {
+    display: block;
+    margin: 30px auto 20px auto;
+}
+
+/* MicroBlog */
+.micro {
+    width: 100%;
+    display: block;
+}
+
+.micro span {
+    display: inline;
+}
+.micro span.text {
+     padding-right: 5px;
+     cursor: pointer;
+}
+.micro:hover{
+    background: #fafafa;
+    -moz-transition: background 300ms ease 0ms;
+    -webkit-transition: background 300ms ease 0ms;
+}
+.logtime {
+    color: #2c8596;
+}
+
+span.anger {
+    color: #a40000;
+}
+
+span.sadness {
+    color: #5c3566;
+}
+
+span.nonsense {
+    color: #8f5902;
+}
+span.happiness {
+    color: #204a87;
+}
+
+span.comment {
+    color: #d2a800;
+}
+
+.commentcount {
+    color: #7a5590;
+}
+
+.comments {
+    display: block;
+    padding: 1px 10px 0px 0px;
+}
+
+.comment{
+    display: block;
+}
+.note {
+
+    width: 100%;
+    display: block;
+    padding: 10px 25px 10px 25px;
+    border-radius: 5px;
+    background: #efefef;
+    margin-bottom: 15px;
+}
+
+.highlighted {
+    text-shadow: 0px 0px 1px Gray;
+}

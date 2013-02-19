@@ -1,0 +1,12 @@
+header {
+    Background: #231829;
+}
+
+.planet {
+    Background: url("/statics/images/moon.png") 0 0 no-repeat transparent;
+    position: absolute;
+    top: 70px;
+    right: 60px;
+    width: 200px;
+    height: 200px;
+}

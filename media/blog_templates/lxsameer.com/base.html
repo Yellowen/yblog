@@ -1,0 +1,54 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% block head %}
+  <script src="/socket/" type="text/javascript"></script>
+  <link rel="stylesheet" href="{{ self.media_url }}css/common.css" type="text/css" />
+  <script src="{{ self.media_url }}js/jquery.min.js" type="text/javascript"></script>
+  <script src="{{ self.media_url }}js/socket.io.js" type="text/javascript"></script>
+  <script src="/statics/js/socket.js" type="text/javascript"></script>
+  <script src="{{ self.media_url }}js/notify.js" type="text/javascript"></script>
+
+{% endblock %}
+{% block extrahead %}
+{% endblock extrahead %}
+
+</head>
+<body>
+<notificationarea tips="{% url notify.views.tips %}"><notify></notify></notificationarea>
+{% block body %}
+
+<header>
+{% block header %}
+
+<div id="sitetitle">
+  <a href="/"><h1>{{ self.blog.title }}</h1></a>
+  <span>{{ self.blog.slug }}</span>
+</div>
+
+<div class="planet"></div>
+<div id="centercloud">
+</div>
+<div id="clouds">
+</div>
+
+{% endblock header %}
+</header>
+<content>
+{% block content %}
+{% endblock content %}
+</content>
+
+{% block footer %}
+<footer>
+<div id="copyright">
+  <p class="pinfo">Version: {{ VERSION }} | Python: {{ PYVERSION }} | Django: {{ DJVERSION }} | Vanda: {{ VANDAVERSION }}</p>
+  <p><a href="/page/copyright/" title="Copyright notes">©</a> 20012-2013 <a href="http://www.yellowen.com/">{% trans "Yellowen" %}</a>.
+  {% trans "Powered by" %}<a href="http://www.vandaproject.com">{% trans "Vanda Platform" %}</a>.</p>
+</div>
+</footer>
+{% endblock footer %}
+{% endblock body %}
+</body>
+</html>

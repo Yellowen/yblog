@@ -1,0 +1,31 @@
+{% extends 'ublog/dashboard/base.html' %}
+{% load i18n %}
+
+{% block extrahead %}
+  <link rel="stylesheet" href="{{ MEDIA_URL }}css/blog/my/forms.css" type="text/css" />
+<script type="text/javascript" src="/statics/admin/js/urlify.js"></script>
+
+<script language="javascript">
+$(function(){
+document.getElementById("id_title").onkeyup = function() {
+    var e = document.getElementById("id_slug");
+    if (!e._changed) { e.value = URLify(document.getElementById("id_title").value, 50); }
+}});
+</script>
+
+{% endblock extrahead %}
+{% block content %}
+<div class="box w1">
+<h1>{{ title }}<h1>
+{% if msg %}
+<div class="{% if msgclass %}{{ msgclass }}{% else %}info{% endif %}">{{ msg }}</div>
+{% endif %}
+
+<form action="{{ url }}" method="POST" enctype="multipart/form-data">{% csrf_token %}
+<table>
+  {{ form.as_table }}
+</table>
+<p><input type="submit" value="{% if submit_title %}{{ submit_title }}{% else %}{% trans 'Submit' %}{% endif %}"></p>
+</form>
+</div>
+{% endblock content %}

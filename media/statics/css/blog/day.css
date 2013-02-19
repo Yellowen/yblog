@@ -1,0 +1,12 @@
+header {
+    Background: #729fcf;
+}
+
+planet {
+    Background: url("/statics/images/sun.png") 0 0 no-repeat transparent;
+    position: absolute;
+    top: 70px;
+    right: 120px;
+    width: 100px;
+    height: 100px;
+}

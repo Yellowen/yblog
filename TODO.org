@@ -1,0 +1,10 @@
+* Templates
+** Register template should be different
+   Register form look and fill
+** Make lxsameer.com more suitable
+
+* Links and Views
+** Create a view for Term of Service 
+** Create a view for Privacy Policy
+* Tasks
+** Add a footer field to blog model to show on the footer section of blog template

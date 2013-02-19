@@ -1,0 +1,89 @@
+article {
+    Background: #fafafa;
+}
+
+article:hover{
+    Background: #fafafa;
+}
+comment {
+    min-height: 90px;
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    display: block;
+    Background: #eeeeec;
+}
+
+comment table th {
+    width: 100px;
+    text-align: center;
+}
+comment table td {
+    padding: 5px;
+    vertical-align: top;
+}
+#commentform {
+    margin-top: 10px;
+    padding: 25px;
+    border-radius: 10px;
+    width: 99%;
+    display: block;
+    Background: #d8c98d;
+}
+
+#commentform input:focus, textarea:focus {
+   border-color: red;
+   -moz-box-shadow: 0px 0px 2px red;
+}
+#commentform input[type=text],#commentform textarea {
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #d2a800;
+    height: 30px;
+    padding: 5px;
+    color: #291d32;
+    margin: 10px;
+}
+#commentform textarea {
+    height: 200px;
+}
+#commentform input[type=submit] {
+    margin-top: 30px;
+    margin-left: 20px;
+    width: 90px;
+    font-size: 18px;
+    padding: 5px;
+}
+
+#commentform table th{
+    text-align: left;
+    width: 100px;
+    font-weight: 700;
+}
+
+#commentform table td{
+    width: 200px;
+    text-align: left;
+}
+.avatar {
+    border-radius: 5px;
+    border: 1px solid #878787;
+}
+
+comment time {
+    margin-top: -15px;
+}
+
+.errorlist {
+    margin: 10px 0px 0px 0px;
+    Background: #f3880e;
+    padding: 10px;
+    border-radius: 5px;
+    list-style: none;
+    width: 100%;
+}
+
+.error{
+    
+}
